@@ -1,0 +1,26 @@
+/* FONT FACE - font-display: fallback; */
+
+@font-face {
+    font-family: "eb-rg";
+    src: url("../fonts/ElleBaskerville.woff2") format("woff2"), url("../fonts/ElleBaskerville.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "eb-it";
+    src: url("../fonts/ElleBaskerville-Italic.woff2") format("woff2"),
+        url("../fonts/ElleBaskerville-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "a-heavy";
+    src: url("../fonts/Avenir-Heavy.woff2") format("woff2"), url("../fonts/Avenir-Heavy.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

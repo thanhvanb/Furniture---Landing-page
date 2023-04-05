@@ -1,0 +1,119 @@
+
+.productpage {
+  
+    .productdetail {
+        margin-top: 80px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        display: grid;
+        grid-template-columns: 1fr 430px;
+
+        &__slide {
+            display: flex;
+            flex-direction: column;
+            padding: 50px 70px 154px 135px;
+            border-right: 1px solid #ccc;
+            &-list {
+                
+                img {
+                width: 100%;
+                overflow: hidden;
+                margin: 0 15px;
+                justify-content: center;
+                object-fit: cover;
+                overflow: hidden;
+                }
+            }
+            .control {
+                width: 140px;
+                height: 40px;
+                margin-right: 0;
+                display: inline-flex;
+                margin-top: 20px;
+                align-self: flex-end;
+                
+                &__btn {
+                    width: 50%;
+                    //height: 100%;
+                    border: 1px solid #000000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    
+                    img {
+                        width: 45px;
+                        height: 30%;
+                    }
+                    &:hover {
+                        background-color: $yellow-cl;
+                        transition: 0.3s;
+                        cursor: pointer;
+                    }
+                    &.--next {
+                        margin-right: -1px;
+                        cursor: pointer;
+                        img {
+                            transform: rotate(-180deg);
+                            
+                        }
+                    }
+                }
+            }
+        }
+        &__description {
+            height: 100%;
+            padding: 30px 75px 30px 20px;
+
+            h1 {
+                font-family: "eb-rg";
+                font-size: 32px;
+                line-height: normal;
+            }
+            &-price {
+                padding-top: 26px;
+                padding-bottom: 26px;
+                color: $yellow-cl;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            p {
+                span {
+                    &:first-child {
+                        width: 140px;
+                        display: inline-block;
+                        padding: 12px 0;
+                    }
+                }
+            }
+            .short-des {
+                margin-top: 30px;
+                h2 {
+                    color: #000;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    line-height: 40px;
+                }
+                p {
+                    line-height: 20px;
+                }
+            }
+        }
+        @include md {
+            &__slide {
+                padding: 40px;
+            }
+        }
+        @include sm {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            &__slide {
+                padding: 15px;
+            }
+            &__description {
+                padding: 40px 15px 40px 15px;
+            }
+        }
+    }
+}

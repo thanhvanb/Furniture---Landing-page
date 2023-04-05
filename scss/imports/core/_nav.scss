@@ -1,0 +1,166 @@
+// css navigator (Menu)
+
+.nav-slider {
+    min-height: 100%;
+    width: 460px;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background: black;
+    z-index: 400;
+    position: fixed;
+    padding: 15px;
+    transition: $t;
+    &.active {
+        transition: 0.3s;
+        transform: translateX(0);
+    }
+    .slider-info {
+        margin-bottom: 140px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a {
+            color: white;
+            opacity: 0.5;
+            font-family: "a-heavy";
+            font-size: 11px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: $t;
+            &:hover {
+                opacity: 1;
+                transition: $t;
+            }
+        }
+        .info-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a {
+                font-family: "a-heavy";
+                font-size: 11px;
+                text-decoration: none;
+                text-transform: uppercase;
+                padding-right: 10px;
+                opacity: 0.5;
+                transition: $t;
+                i {
+                    display: flex;
+                    align-items: center;
+                    img {
+                        width: 15px;
+                        margin-left: 10px;
+                    }
+                }
+               
+                &:hover {
+                    opacity: 1;
+                    transition: $t;
+                }
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    .slider-body {
+        display: flex;
+        .left {
+            flex-direction: column;
+            padding-right: 100px;
+            .closebtn {
+                width: 38px;
+                padding-top: 20px;
+                cursor: pointer;
+                opacity: 0.5;
+                transition: $t;
+                &::before {
+                    content: "";
+                    width: 100%;
+                    background: white;
+                    height: 2px;
+                    opacity: 0.5;
+                    transition: $t;
+                    &:hover {
+                        opacity: 1;
+                        transition: $t;
+                    }
+                }
+                &:hover {
+                    opacity: 1;
+                    transition: $t;
+                }
+            }
+        }
+        ul {
+            width: 60%;
+            li {
+                a {
+                    color: white;
+                    font-family: "eb-rg";
+                    font-size: 26px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    @include transition($t);
+                    display: block;
+                    padding: 12px 0;
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        background-color: white;
+                        height: 1px;
+                        opacity: 0;
+                        margin-left: -20px;
+                        @include transition($t);
+                        @include transform(scale(0));
+                        @include transform-origin(left);
+                    }
+                    &:hover {
+                        @include transition($t);
+                        &::after {
+                            opacity: 1;
+                            @include transform(scale(1));
+                            @include transition($t);
+                        }
+                    }
+                    &.dim {
+                        opacity: 0.4;
+                        @include transition($t);
+                    }
+                }
+                &:last-child {
+                    display: flex;
+                    align-items: center;
+                    a {
+                        font-size: 14px;
+                        &::after {
+                            display: none;
+                        }
+                    }
+                    span {
+                        content: "";
+                        display: inline-block;
+                        width: 1px;
+                        height: 14px;
+                        margin: 0 10px;
+                        background: white;
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+    @include xs {
+        width: 100%;
+        .slider-info {
+            margin-bottom: 50px;
+        }
+        .slider-body {
+            .left {
+                padding-right: 75px;
+            }
+        }
+    }
+}

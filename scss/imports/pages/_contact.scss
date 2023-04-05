@@ -1,0 +1,173 @@
+.contactpage {
+    .contact {
+        background: url(../img/contact-banner.jpg) no-repeat center;
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        min-height: calc(100vh - 343px);
+        .content {
+            z-index: 200;
+            width: 790px;
+            margin: 100px auto;
+            label {
+                color: $yellow-tx;
+                font-weight: bold;
+                font-size: 12px;
+                margin-bottom: 10px;
+                display: block;
+            }
+            p {
+                font-size: 12px;
+                color: #fff;
+                line-height: 25px;
+            }
+            .contact__info {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 50px;
+                justify-content: space-between;
+                &-right {
+                    .hotline {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        column-gap: 57px;
+                        margin-bottom: 25px;
+                    }
+                    .address {
+                        h2 {
+                            color: $yellow-tx;
+                            font-weight: bold;
+                            font-size: 12px;
+                            padding-bottom: 25px;
+                        }
+                        p {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            .contact__text {
+                margin-top: 55px;
+                margin-bottom: 25px;
+                max-width: 400px;
+                p {
+                    font-size: 12px;
+                    padding-bottom: 25px;
+                    color: #fff;
+                    line-height: 25px;
+                }
+            }
+            .contact__form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 50px;
+                form {
+                    .input__form {
+                        margin-bottom: 30px;
+                    }
+                    p {
+                        color: #fff;
+                        margin-bottom: 8px;
+                    }
+                    input {
+                        width: 100%;
+                        background: none;
+                        border-top: none;
+                        border-right-style: hidden;
+                        border-left-style: hidden;
+                        border-bottom: 1px solid $yellow-cl;
+                        color: #fff;
+                        outline: 0;
+                        padding: 5px 0;
+                        .no-outline:focus {
+                            outline: none;
+                        }
+                    }
+
+                    textarea {
+                        width: 100%;
+                        height: 91px;
+                        background: none;
+                        border: 0;
+                        resize: none;
+                        outline: 0;
+                        color: #fff;
+                        font-family: arial;
+                        border: 1px solid $yellow-cl;
+                        padding: 10px;
+                        line-height: 22px;
+                        margin-top: 24px;
+                    }
+                }
+                &-right {
+                    position: relative;
+                    img {
+                        position: absolute;
+                        height: 82px;
+                        width: 100%;
+                    }
+                    .submit {
+                        margin-top: 0px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid $yellow-cl;
+                        opacity: 0.5;
+                        background: #000;
+                        transition: $t;
+                        cursor: pointer;
+                        padding: 8px 20px;
+                        float: right;
+                        p {
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            font-weight: bold;
+                            color: #fff;
+                        }
+                        &:hover {
+                            background: $white-bg-cl;
+                            p{
+                                color: #000;
+                            }
+                            
+                            opacity: 1;
+                            transition: $t;
+                        }
+                    }
+                }
+            }
+            @include sm {
+                width: 100%;
+            }
+            @include xs {
+                margin: 50px auto;
+                .contact__info {
+                    grid-template-columns: 1fr;
+                    width: 100%;
+                    &-right {
+                        .hotline {
+                            grid-template-columns: 1fr;
+                            padding-top: 20px;
+                            h2 {
+                                padding-bottom: 10px;
+                            }
+                            .email {
+                                padding-top: 20px;
+                            }
+                        }
+                        .address {
+                            h2 {
+                                padding-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+                .contact__form {
+                    grid-template-columns: 1fr;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,182 @@
+// css components
+.textbox {
+    max-width: 540px;
+    margin-bottom: 50px;
+    color: $white-cl;
+    .title {
+        text-transform: uppercase;
+        font-family: a-heavy;
+        font-size: 11px;
+        letter-spacing: 5px;
+        align-items: center;
+        margin-left: 0px;
+    }
+    .des {
+        font-family: pr;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 15px auto;
+    }
+
+    &.--black {
+        color: $black-cl;
+    }
+}
+
+.slider__menu {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 180px;
+    height: 180px;
+    background: $blue;
+    transition: $t;
+    cursor: pointer;
+    .logo {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        top: 45px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+    .btnmenu {
+        cursor: pointer;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 45px;
+        height: 30px;
+        position: relative;
+        display: flex;
+
+        &:before,
+        &:after,
+        span {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background: white;
+            display: block;
+            position: absolute;
+            transition: $t;
+        }
+        &:before {
+            transform: rotate(0deg) translate(0px, 0px);
+        }
+        &:after {
+            bottom: 0;
+            transform: rotate(0deg) translate(0px, 0px);
+        }
+        span {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &:hover {
+        background: white;
+        transition: $t;
+        .btnmenu {
+            &::after,
+            &::before,
+            span {
+                background: black;
+                transition: $t;
+            }
+        }
+    }
+    @include md {
+        display: none;
+    }
+    @include sm {
+        width: 120px;
+        height: 170px;
+    }
+}
+
+.btngroup {
+    display: inline-flex;
+    align-items: center;
+    .btn {
+        margin: 0 15px;
+    }
+    @include xs {
+        flex-direction: column;
+        .btn {
+            margin: 7px 15px;
+        }
+    }
+}
+
+.product__intro {
+    display: flex;
+    align-items: flex-start;
+    max-width: 640px;
+    &.--prode {
+        max-width: 100%;
+        margin: auto;
+    }
+    &-number {
+        font-family: "eb-rg";
+        font-size: 106px;
+        line-height: 72px;
+        color: $yellow-tx;
+        margin-right: 24px;
+    }
+    &-textbox {
+        line-height: 24px;
+        h2 {
+            font-family: "eb-rg";
+            font-size: 28px;
+            margin-bottom: 8px;
+            &.--white {
+                color: #fff;
+            }
+        }
+        p {
+            font-family: Arial;
+            font-size: 12px;
+        }
+    }
+}
+
+.number {
+    ul {
+        display: grid;
+        grid-template-columns: 30px 30px 30px 30px;
+        column-gap: 10px;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        li {
+            text-align: center;
+            border: 1px solid #0000;
+            transition: $t;
+            a {
+                line-height: 30px;
+                text-align: center;
+                box-sizing: content-box;
+                text-decoration: none;
+                transition: $t;
+                color: black;
+                
+            }
+            &:hover {
+                background: #ccc;
+                border: 1px solid #000;
+                transition: $t;
+            }
+            &:active {
+                background: #ccc;
+                pointer-events: auto;
+                border: 1px solid #0000;
+                pointer-events: auto;
+            }
+            
+        }
+    }
+}
