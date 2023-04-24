@@ -1,5 +1,5 @@
 # Furniture-Project
-This is my second project to code a landing page with skills of HTML, SCSS, JQUERY, JAVASCRIPT...
+This is a project to code a landing page with application skills of HTML, SCSS, JQUERY, JAVASCRIPT...
 
 https://thanhvanb.github.io/Furniture---Landing-page/
 
